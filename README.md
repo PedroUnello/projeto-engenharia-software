@@ -8,4 +8,4 @@
 - [Claudio Ramos](https://github.com/ClaudioSiqueira) - 41916565  
 - [Pedro Unello Neto](https://github.com/PedroUnello) - 41929713
 - [Ye Wei Jiang](https://github.com/lucas-ye) - 41926293
-
+- [Fernando Mauadie da Silva Machado]() - 32156944
