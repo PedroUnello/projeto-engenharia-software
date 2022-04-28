@@ -1,62 +1,67 @@
 body {
-    background-color: #082032;
-  }
-  h1 {
-    color: blue;
-  }
-  .top-menu {
-    background-color: #2C394B;
-    position: relative;
-    height: 200px;
-    width: 100%;
+  background-color: #082032;
+  position: absolute;
+  margin: 0;
+  padding: 0;
+}
+
+.top-menu {
+  background-color: #2C394B;
+  position: relative;
+  height: 200px;
+  margin: 20px; 
+  width: 100% - margin;
+ 
+}
+
+.bars{
+  align-self: left;
+}
+
+#container-top{
+  display: grid;
+  grid-template-columns: 10% 10% 10%;
+  grid-column-gap: 10px;
+  margin: 10px;
+}
+
+
+.container { 
+  margin:10px;
+  width: 100% - margin;
+  height: 720px;
+  overflow: hidden;
+
+}
+
+.card{
+  background-color: #2C394B;
+  height: 700;
+  width: 612px;
+  margin: 10px;
+
+
+  float: left;
+  align-self: center;
+  font-size: 20px;
+  color: white;
+  overflow-x: hidden;
+
+}
 
     
-  }
-
-  .bars{
-    
-    align-self: left;
-  }
-
-  #grid-top{
-    display: grid;
-    grid-template-columns: 10% 70% 90%;
-    grid-column-gap: 10px;
-    margin: 10px;
-  }
-  .grid{
-    display: grid;
-    grid-template-columns: 33% 33% 33%;
-    grid-column-gap: 10px;
-    margin: 10px;
-  }
+.task{
+  background-color: #334756;
+  height:100px;
+  margin: 10px;
+  width: 100% - margin;
+  border-radius: 2%;
+  overflow-x: hidden;
+}
 
 
-  .card{
-      background-color: #2C394B;
-      height:90%;
-      width: 100%;
-      float: left;
-      border-radius: 2%;
-      font-size: 20px;
-      color: white;
-      overflow-x: hidden;
-  }
-
-    
-  .task{
-    background-color: #334756;
-    height:100px;
-    margin: 10px;
-    width: 100% - margin;
-    border-radius: 2%;
-    overflow-x: hidden;
-  }
-
-
-  .addBy{
-
-    color:aqua;
-  }
+.addBy{
+  color:aqua;
+}
 
   
