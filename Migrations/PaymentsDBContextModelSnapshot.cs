@@ -17,21 +17,11 @@ namespace Burndown.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 64)
                 .HasAnnotation("ProductVersion", "5.0.7");
 
-            modelBuilder.Entity("Burndown.Entities.AccountNS.Account", b =>
+            modelBuilder.Entity("Burndown.Entities.EmployeeNS.Employee", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
-
-                    b.Property<string>("AccountAgency")
-                        .IsRequired()
-                        .HasMaxLength(4)
-                        .HasColumnType("varchar(4)");
-
-                    b.Property<string>("AccountNumber")
-                        .IsRequired()
-                        .HasMaxLength(10)
-                        .HasColumnType("varchar(10)");
 
                     b.Property<DateTime>("CreationDate")
                         .ValueGeneratedOnAdd()
@@ -43,99 +33,30 @@ namespace Burndown.Migrations
                         .HasColumnType("tinyint(1)")
                         .HasDefaultValue(false);
 
-                    b.Property<int>("FinancialInstitutionId")
-                        .HasColumnType("int")
-                        .HasColumnName("FinancialInstitution");
-
                     b.Property<Guid>("Hash")
                         .HasColumnType("char(36)");
 
-                    b.Property<DateTime?>("LastUpdateDate")
-                        .HasColumnType("datetime(6)");
-
-                    b.Property<int>("ParticipantId")
-                        .HasColumnType("int")
-                        .HasColumnName("Participant");
-
-                    b.Property<bool>("Saved")
-                        .HasColumnType("tinyint(1)");
-
-                    b.Property<string>("Type")
+                    b.Property<string>("LastName")
                         .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("varchar(50)");
 
-                    b.HasKey("Id");
-
-                    b.HasIndex("FinancialInstitutionId");
-
-                    b.HasIndex("Hash")
-                        .IsUnique();
-
-                    b.HasIndex("ParticipantId");
-
-                    b.ToTable("Account");
-                });
-
-            modelBuilder.Entity("Burndown.Entities.CreditorNS.Creditor", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    b.Property<string>("AccountType")
-                        .IsRequired()
-                        .HasMaxLength(5)
-                        .HasColumnType("varchar(5)");
-
-                    b.Property<string>("BankAccountNumber")
-                        .IsRequired()
-                        .HasMaxLength(10)
-                        .HasColumnType("varchar(10)");
-
-                    b.Property<string>("BankAgencyNumber")
-                        .IsRequired()
-                        .HasMaxLength(4)
-                        .HasColumnType("varchar(4)");
-
-                    b.Property<string>("BankName")
+                    b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("varchar(50)");
 
-                    b.Property<string>("CPForCNPJ")
+                    b.Property<string>("email")
                         .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("varchar(50)");
-
-                    b.Property<DateTime>("CreationDate")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("datetime(6)")
-                        .HasDefaultValueSql("CURRENT_TIMESTAMP(6)");
-
-                    b.Property<string>("CreditorName")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("varchar(50)");
-
-                    b.Property<bool>("Deleted")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("tinyint(1)")
-                        .HasDefaultValue(false);
-
-                    b.Property<Guid>("Hash")
-                        .HasColumnType("char(36)");
-
-                    b.Property<string>("Pix")
-                        .HasMaxLength(50)
-                        .HasColumnType("varchar(50)");
+                        .HasMaxLength(250)
+                        .HasColumnType("varchar(250)");
 
                     b.HasKey("Id");
 
                     b.HasIndex("Hash")
                         .IsUnique();
 
-                    b.ToTable("Creditor");
+                    b.ToTable("Employee");
                 });
 
             modelBuilder.Entity("Burndown.Entities.FinancialInstitutionNS.FinancialInstitution", b =>
@@ -187,15 +108,11 @@ namespace Burndown.Migrations
                     b.ToTable("FinancialInstitution");
                 });
 
-            modelBuilder.Entity("Burndown.Entities.ParticipantNS.Participant", b =>
+            modelBuilder.Entity("Burndown.Entities.ProjectEmployeeNS.ProjectEmployee", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
-
-                    b.Property<string>("CPForCNPJ")
-                        .HasMaxLength(50)
-                        .HasColumnType("varchar(50)");
 
                     b.Property<DateTime>("CreationDate")
                         .ValueGeneratedOnAdd()
@@ -207,33 +124,30 @@ namespace Burndown.Migrations
                         .HasColumnType("tinyint(1)")
                         .HasDefaultValue(false);
 
+                    b.Property<int>("EmployeeId")
+                        .HasColumnType("int")
+                        .HasColumnName("Employee");
+
                     b.Property<Guid>("Hash")
                         .HasColumnType("char(36)");
 
-                    b.Property<string>("Login")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("varchar(50)");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("varchar(50)");
-
-                    b.Property<string>("Password")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("varchar(50)");
+                    b.Property<int>("ProjectId")
+                        .HasColumnType("int")
+                        .HasColumnName("Project");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("EmployeeId");
 
                     b.HasIndex("Hash")
                         .IsUnique();
 
-                    b.ToTable("Participant");
+                    b.HasIndex("ProjectId");
+
+                    b.ToTable("ProjectEmployee");
                 });
 
-            modelBuilder.Entity("Burndown.Entities.PaymentNS.Payment", b =>
+            modelBuilder.Entity("Burndown.Entities.ProjectNS.Project", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -243,14 +157,6 @@ namespace Burndown.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime(6)")
                         .HasDefaultValueSql("CURRENT_TIMESTAMP(6)");
-
-                    b.Property<int>("CreditorId")
-                        .HasColumnType("int")
-                        .HasColumnName("Creditor");
-
-                    b.Property<int>("DebitorId")
-                        .HasColumnType("int")
-                        .HasColumnName("Debitor");
 
                     b.Property<bool>("Deleted")
                         .ValueGeneratedOnAdd()
@@ -258,78 +164,43 @@ namespace Burndown.Migrations
                         .HasDefaultValue(false);
 
                     b.Property<string>("Description")
+                        .IsRequired()
                         .HasMaxLength(500)
                         .HasColumnType("varchar(500)");
 
                     b.Property<Guid>("Hash")
                         .HasColumnType("char(36)");
 
-                    b.Property<DateTime?>("LastUpdateDate")
-                        .HasColumnType("datetime(6)");
-
-                    b.Property<string>("Message")
-                        .HasMaxLength(500)
-                        .HasColumnType("varchar(500)");
-
-                    b.Property<string>("PaymentMethod")
-                        .HasColumnType("longtext");
-
-                    b.Property<string>("Status")
+                    b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("varchar(50)");
 
-                    b.Property<double>("Value")
-                        .HasColumnType("double");
-
                     b.HasKey("Id");
-
-                    b.HasIndex("CreditorId");
-
-                    b.HasIndex("DebitorId");
 
                     b.HasIndex("Hash")
                         .IsUnique();
 
-                    b.ToTable("Payment");
+                    b.ToTable("Project");
                 });
 
-            modelBuilder.Entity("Burndown.Entities.AccountNS.Account", b =>
+            modelBuilder.Entity("Burndown.Entities.ProjectEmployeeNS.ProjectEmployee", b =>
                 {
-                    b.HasOne("Burndown.Entities.FinancialInstitutionNS.FinancialInstitution", "FinancialInstitution")
+                    b.HasOne("Burndown.Entities.EmployeeNS.Employee", "Employee")
                         .WithMany()
-                        .HasForeignKey("FinancialInstitutionId")
+                        .HasForeignKey("EmployeeId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
-                    b.HasOne("Burndown.Entities.ParticipantNS.Participant", "Participant")
+                    b.HasOne("Burndown.Entities.ProjectNS.Project", "Project")
                         .WithMany()
-                        .HasForeignKey("ParticipantId")
+                        .HasForeignKey("ProjectId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
-                    b.Navigation("FinancialInstitution");
+                    b.Navigation("Employee");
 
-                    b.Navigation("Participant");
-                });
-
-            modelBuilder.Entity("Burndown.Entities.PaymentNS.Payment", b =>
-                {
-                    b.HasOne("Burndown.Entities.CreditorNS.Creditor", "Creditor")
-                        .WithMany()
-                        .HasForeignKey("CreditorId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
-                    b.HasOne("Burndown.Entities.ParticipantNS.Participant", "Debitor")
-                        .WithMany()
-                        .HasForeignKey("DebitorId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
-                    b.Navigation("Creditor");
-
-                    b.Navigation("Debitor");
+                    b.Navigation("Project");
                 });
 #pragma warning restore 612, 618
         }
