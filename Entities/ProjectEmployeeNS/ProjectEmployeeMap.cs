@@ -2,23 +2,21 @@
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Burndown.Extensions;
 
-namespace Burndown.Entities.EmployeeNS
+namespace Burndown.Entities.ProjectEmployeeNS
 {
-    public class EmployeeMap : IEntityTypeConfiguration<Employee>
+    public class ProjectEmployeeMap : IEntityTypeConfiguration<ProjectEmployee>
     {
-        public void Configure(EntityTypeBuilder<Employee> builder)
+        public void Configure(EntityTypeBuilder<ProjectEmployee> builder)
         {
             builder.MapBase();
 
-            builder.Property(x => x.Name)
-                .IsRequired()
-                .HasMaxLength(50);
-            builder.Property(x => x.LastName)
-                .IsRequired()
-                .HasMaxLength(50);
-            builder.Property(x => x.Email)
-                .IsRequired()
-                .HasMaxLength(100);
+            builder.Property(x => x.ProjectId)
+                .HasColumnName("Project");
+            builder.HasOne(x => x.Project);
+
+            builder.Property(x => x.EmployeeId)
+                .HasColumnName("Employee");
+            builder.HasOne(x => x.Employee);
         }
     }
 }
