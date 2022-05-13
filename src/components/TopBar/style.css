@@ -1,0 +1,39 @@
+.navbar-toggle {
+  color: white;
+}
+
+.filtro {
+  color: white;
+  display: inline-block;
+  margin-right: 0%;
+  margin-top: 3%;
+}
+
+.filterButton {
+  display: inline-block;
+  min-width: 140px;
+  max-width: 140px;
+  margin-right: 10px;
+
+}
+
+.projectSettings {
+  margin-top: 2%;
+}
+
+.projectSettings Button {
+   margin-right: 6px ;
+}
+
+.userImage {
+  margin-top: 15%;
+}
+
+#background {
+  background-color: #2C394B;
+}
+
+.color-nav {
+  margin-top: 300%;
+}
+

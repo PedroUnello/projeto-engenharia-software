@@ -1,0 +1,42 @@
+.card {
+    background-color: #2C394B;
+    min-height: 82vh;
+    max-height: 82vh;
+    height: 100%;
+    width: 100%;
+    padding: 2%;
+    align-self: center;
+    border-radius: 4%;
+    font-size: 20px;
+    color: white;
+    overflow-x: hidden;
+  }
+  .card .numberIndicator {
+  
+    width: 30px;
+    text-align: center;
+    margin-right: 5px;
+    background-color: gray;
+    border-radius: 50%;
+  }
+  .card .cardBar {
+    margin-top: -4px;
+  }
+
+  .deleteButton {
+    float: right;
+  }
+
+  .taskInput {
+    padding: 5px 12px;
+    font-size: 14px;
+    line-height: 20px;
+    margin-right: 5%;
+    width: 80%;
+    vertical-align: middle;
+    background-repeat: no-repeat;
+    background-position: right 8px center;
+    border: 1px solid;
+    border-radius: 6px;
+    transition: 80ms cubic-bezier(0.33, 1, 0.68, 1);
+  }
