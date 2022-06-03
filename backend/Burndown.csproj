@@ -1,0 +1,81 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UserSecretsId>e44ce6b3-e929-498c-b3de-14d9911d9934</UserSecretsId>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    <DockerfileContext>.</DockerfileContext>
+    <OutputType>Exe</OutputType>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <NoWarn>$(NoWarn);1591</NoWarn>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="DatabaseIntegrationLambdas\**" />
+    <Compile Remove="TerosOpenBankingBackOfficeFrontEnd\**" />
+	<Compile Remove="TerosOpenBankingBackOfficeTests\**" />
+	<Content Remove="DatabaseIntegrationLambdas\**" />
+	<Content Remove="TerosOpenBankingBackOfficeFrontEnd\**" />
+	<Content Remove="TerosOpenBankingBackOfficeTests\**" />
+	<EmbeddedResource Remove="DatabaseIntegrationLambdas\**" />
+	<EmbeddedResource Remove="TerosOpenBankingBackOfficeFrontEnd\**" />
+	<EmbeddedResource Remove="TerosOpenBankingBackOfficeTests\**" />
+	<None Remove="DatabaseIntegrationLambdas\**" />
+	<None Remove="TerosOpenBankingBackOfficeFrontEnd\**" />
+	<None Remove="TerosOpenBankingBackOfficeTests\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+	<PackageReference Include="CsvHelper" Version="27.1.1" />
+	<PackageReference Include="Hangfire" Version="1.7.24" />
+	<PackageReference Include="Hangfire.Core" Version="1.7.24" />
+	<PackageReference Include="Hangfire.MySqlStorage" Version="2.0.3" />
+	<PackageReference Include="Humanizer.Core" Version="2.11.10" />
+	<PackageReference Include="itext7" Version="7.1.15" />
+	<PackageReference Include="itext7.pdfhtml" Version="3.0.4" />
+	<PackageReference Include="Microsoft.AspNet.WebApi.Client" Version="5.2.7" />
+	<PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="3.1.10" />
+    <PackageReference Include="AutoMapper" Version="10.1.1" />
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="8.1.1" />
+    <PackageReference Include="FluentValidation" Version="10.2.3" />
+    <PackageReference Include="Microsoft.AspNetCore.Cors" Version="2.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="3.1.18" />
+    <PackageReference Include="Microsoft.Bcl.AsyncInterfaces" Version="5.0.0" />
+    <PackageReference Include="Microsoft.DotNet.PlatformAbstractions" Version="3.1.6" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Proxies" Version="5.0.7" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="5.0.7" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="5.0.7">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.10.9" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.4" />
+    <PackageReference Include="MySqlConnector" Version="2.1.9" />
+    <PackageReference Include="Newtonsoft.Json.Schema" Version="3.0.14" />
+    <PackageReference Include="NSwag.AspNetCore" Version="13.11.3" />
+    <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="5.0.1" />
+    <PackageReference Include="RestSharp" Version="106.11.7" />
+    <PackageReference Include="Scrutor" Version="3.3.0" />
+	<PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.11.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Update="appsettings.development.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="appsettings.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="appsettings.production.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="appsettings.sandbox.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="appsettings.staging.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+
+</Project>
