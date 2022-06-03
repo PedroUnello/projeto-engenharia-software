@@ -1,0 +1,25 @@
+.navbar-toggle {
+  color: white;
+}
+
+.userImage {
+  margin-top: 50%;
+}
+
+#background {
+  background-color: #2C394B;
+}
+
+a:hover {
+  background: none;
+}
+
+#notificationCounter {
+  float: left;
+  width: 30px;
+  text-align: center;
+  margin-right: 5px;
+  background-color: gray;
+  border-radius: 50%;
+
+}

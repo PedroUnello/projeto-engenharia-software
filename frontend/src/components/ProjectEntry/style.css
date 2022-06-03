@@ -1,0 +1,19 @@
+a:hover{
+    background-color: #677783;
+    opacity: 40%;
+}
+.accordion-button {
+    background-color: transparent !important;
+    border: 0.1px solid #5b6974;
+    margin: -1px;
+  }
+  
+  .accordion-button:focus {
+    box-shadow: none;
+    border: 0.1px solid #5b6974;
+  }
+  
+  .accordion-button:not(.collapsed) {
+    border: 0.1px solid #5b6974;
+    color: #212529;
+  }

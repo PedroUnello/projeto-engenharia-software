@@ -1,0 +1,53 @@
+#input{
+  background-color: rgb(51,71,86);
+  color:white;
+  font-size: 14;
+  border: 1px solid rgb(87, 92, 99);
+  font-family: inherit;
+  border-radius: 6px;
+}
+
+#input-error{
+  background-color: rgb(51,71,86);
+  color:white;
+  border:1px solid red;
+  font-size: 14;
+  font-family: inherit;
+  border-radius: 6px;
+}
+
+#login{
+  width: 250px;
+}
+
+#card{
+  border: 1px solid rgb(87, 92, 99);
+  background-color: rgb(44,57,75);
+  border-radius: 10px;
+  width: 300px;
+  height: 250px;
+}
+
+#card-cadastro{
+  border: 1px solid rgb(87, 92, 99);
+  background-color: rgb(44,57,75);
+  border-radius: 10px;
+  width: 300px;
+  height: 400px;
+}
+
+#logo{
+  margin-top: 50px;
+  margin-right: 10px;
+}
+#button{
+  border: 1px solid rgb(87, 92, 99);
+  background-color: rgb(255,76,41);
+  border-radius: 6px;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+

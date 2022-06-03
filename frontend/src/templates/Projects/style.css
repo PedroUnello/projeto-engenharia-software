@@ -1,0 +1,27 @@
+.content {
+    margin: 2%;
+}
+
+.actions {
+    color:white;
+}
+
+.projectList {
+    background: #334756;
+    border-radius: 10px;
+    padding: 2%;
+    height: 75vh;
+}
+
+.label {
+    color:white;
+    margin:10px 5px 10px 5px;
+}
+
+.project {
+    margin-top: 10px;
+    color: white; 
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

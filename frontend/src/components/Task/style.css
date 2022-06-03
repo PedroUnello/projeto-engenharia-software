@@ -1,0 +1,22 @@
+.task {
+    background-color: #334756;
+    min-height: 150px;
+    max-height: 150px;
+    width: 100%;
+    margin-top: 10px;
+    border-radius: 10px;
+    padding: 20px;
+    overflow-x: hidden;
+  }
+
+.task:hover{
+  background-color: #677783;
+  opacity: 40%;
+}
+
+.addBy {
+  text-align: end;
+  float: right;
+  margin-top: 80px;
+  color: aqua
+}

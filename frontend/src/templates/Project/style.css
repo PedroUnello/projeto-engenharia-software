@@ -1,0 +1,27 @@
+.grid {
+  margin: 10px;
+}
+
+.filtro {
+  color: white;
+  display: inline-block;
+  margin-right: 0%;
+  margin-top: 1%;
+}
+
+.filterButton {
+  display: inline-block;
+  min-width: 140px;
+  max-width: 140px;
+  margin-right: 10px;
+
+}
+
+.projectSettings {
+  margin-top: 1%;
+}
+
+.projectSettings Button {
+  width: 8%;
+  margin-right: 6px ;
+}
